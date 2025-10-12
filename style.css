@@ -4,9 +4,20 @@
     margin: 0 auto;
 }
 
-.container#main{
+.container{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.container#main {
     flex-direction: column;
+    gap: 20px;
+}
+
+.container#buttons {
+    gap: 100px;
+}
+
+button {
+    padding: 5px 20px;
 }
