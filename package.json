@@ -4,8 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
-    "start": "lite-server"
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
