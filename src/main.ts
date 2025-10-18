@@ -1,15 +1,19 @@
 import {Game} from "./game.js";
-import type { GameState } from "./types.js";
 const canvas = document.getElementById('gameCanvas') as HTMLCanvasElement;
 const ctx = canvas.getContext('2d');
 const standBtn = document.getElementById("standBtn")!;
+const hitBtn = document.getElementById("hitBtn")!;
 
 const game = new Game();
-const gameState: GameState = {
-    dealerHand: [],
-    playerHand: [],
-    deck: game.createDeck()
-}
+console.log(game.playerHand);
+console.log(game.dealerHand);
 standBtn.onclick = () => { 
-    console.log("standing");
+    game.drawDealer();
 };
+hitBtn.onclick = () => {
+    game.hitPlayer();
+    console.log(game.playerHand);
+    if (game.sumOfHand(game.playerHand) > 21) {
+        alert("you lose!");
+    }
+}
