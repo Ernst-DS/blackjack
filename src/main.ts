@@ -7,13 +7,17 @@ const hitBtn = document.getElementById("hitBtn")!;
 const game = new Game();
 console.log(game.playerHand);
 console.log(game.dealerHand);
-standBtn.onclick = () => { 
+standBtn.onclick = () => {    
     game.drawDealer();
+    game.checkWinner();
 };
+
 hitBtn.onclick = () => {
     game.hitPlayer();
-    console.log(game.playerHand);
-    if (game.sumOfHand(game.playerHand) > 21) {
-        alert("you lose!");
-    }
+    game.checkWinner();
+}
+
+standBtn.onclick = () => {
+    game.drawDealer();
+    game.checkWinner();
 }
